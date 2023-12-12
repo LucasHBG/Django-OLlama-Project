@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata, Viewport } from 'next'
+import '@/styles/globals.css'
 import { siteConfig } from '@/config/site'
 import { fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
@@ -13,16 +13,16 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
+    shortcut: "/favicon-32x32.png",
     apple: "/apple-touch-icon.png",
   },
 }
+
+export const viewport: Viewport = {
+  themeColor: [{ media: "(prefers-color-scheme: light)", color: "#f9f9f9" }],
+};
 
 interface RootLayoutProps {
   children: React.ReactNode
