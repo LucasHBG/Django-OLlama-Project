@@ -7,8 +7,7 @@ import { buttonVariants } from "./ui/button"
 
 export default function SiteFooter() {
     return (
-        <footer className="flex flex-col sm:flex-row h-auto sm:h-16 space-y-4 sm:space-y-0 py-4 sm:py-0 justify-between items-center border-t px-4 md:px-6 bg-background">
-            {/* <MainNav items={siteConfig.mainNav} /> */}
+        <footer className="container  flex flex-col z-40 sm:flex-row h-auto sm:h-16 space-y-4 sm:space-y-0 py-4 sm:py-0 justify-between items-center border-t px-4 md:px-6 bg-background">
             <div className="flex space-x-4 items-center">
                 <Link href="/" className="flex items-center space-x-2">
                     <IconLogo className="h-6 w-6" />
@@ -70,7 +69,9 @@ export default function SiteFooter() {
                     </div>
                 </Link>
             </nav>
-            <p className="text-xs sm:text-sm text-[#9ca3af]">© 2023 West Side Company</p>
+            <p className="text-xs sm:text-sm text-[#9ca3af]">
+                © 2023 West Side Company
+            </p>
         </footer>
     )
 }
