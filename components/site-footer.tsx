@@ -5,9 +5,9 @@ import { siteConfig } from "@/config/site"
 import { IconEmail, IconInstagram, IconLogo, IconWhatsApp } from "./icons"
 import { buttonVariants } from "./ui/button"
 
-export default function FooterHeader() {
+export default function SiteFooter() {
     return (
-        <footer className="flex h-16 justify-between items-center border-t px-4 md:px-6 bg-background">
+        <footer className="flex flex-col sm:flex-row h-auto sm:h-16 space-y-4 sm:space-y-0 py-4 sm:py-0 justify-between items-center border-t px-4 md:px-6 bg-background">
             {/* <MainNav items={siteConfig.mainNav} /> */}
             <div className="flex space-x-4 items-center">
                 <Link href="/" className="flex items-center space-x-2">
@@ -48,7 +48,7 @@ export default function FooterHeader() {
                             variant: "ghost",
                         })}
                     >
-                        <IconInstagram className="h-4 w-4" />
+                        <IconInstagram className="h-5 w-5" />
                         <span className="sr-only">Instagram</span>
                     </div>
                 </Link>
@@ -65,14 +65,12 @@ export default function FooterHeader() {
                             variant: "ghost",
                         })}
                     >
-                        <IconEmail className="h-5 w-5" />
+                        <IconEmail className="h-6 w-6" />
                         <span className="sr-only">E-mail</span>
                     </div>
                 </Link>
-                <p className="text-sm text-[#9ca3af]">
-                    © 2023 West Side Company
-                </p>
             </nav>
+            <p className="text-xs sm:text-sm text-[#9ca3af]">© 2023 West Side Company</p>
         </footer>
     )
 }
