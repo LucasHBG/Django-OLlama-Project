@@ -9,6 +9,10 @@ export const siteConfig = {
             title: "Home",
             href: "/",
         },
+        {
+            title: "Dashboard",
+            href: "/auth/dashboard"
+        }
     ],
     links: {
         whatsapp: "https://wa.me/5562982560169",
