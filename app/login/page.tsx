@@ -1,4 +1,22 @@
+import { FormEvent } from "react"
+import { useRouter } from "next/router"
+
 export default function LoginPage() {
+    const router = useRouter()
+
+    async function submitLogin(event: FormEvent) {
+        event.preventDefault()
+
+        const user_email = (
+            document.getElementById("email") as HTMLInputElement
+        ).value
+        const user_password = (
+            document.getElementById("password") as HTMLInputElement
+        ).value
+
+        router.push("/auth/dashboard")
+    }
+
     return (
         <main className="flex justify-center items-start pb-8 pt-6 md:py-10 px-4 min-h-screen bg-gradient-to-b from-white to-gray-900 dark:from-gray-900 dark:to-white">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm transition-colors duration-500 ease-in-out">
@@ -43,7 +61,10 @@ export default function LoginPage() {
                     </div>
                 </div>
                 <div className="flex items-center p-6">
-                    <button className="inline-flex items-center justify-center rounded-md text-sm sm:text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">
+                    <button
+                        onClick={submitLogin}
+                        className="inline-flex items-center justify-center rounded-md text-sm sm:text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+                    >
                         Entrar
                     </button>
                 </div>
