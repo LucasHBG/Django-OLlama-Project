@@ -7,9 +7,9 @@ import { buttonVariants } from "./ui/button"
 
 export default function SiteFooter() {
     return (
-        <footer className=" z-40     border-t  bg-background w-full">
-            <div className="container h-auto sm:h-16 py-4 sm:py-0 flex flex-col sm:flex-row space-y-4 sm:space-y-0 justify-between items-center px-4 md:px-6">
-                <div className="flex space-x-4 items-center">
+        <footer className=" z-40 w-full border-t bg-background">
+            <div className="container flex h-auto flex-col items-center justify-between space-y-4 px-4 py-4 sm:h-16 sm:flex-row sm:space-y-0 sm:py-0 md:px-6">
+                <div className="flex items-center space-x-4">
                     <Link href="/" className="flex items-center space-x-2">
                         <IconLogo className="h-6 w-6" />
                         <span className="inline-block font-bold">
@@ -18,7 +18,7 @@ export default function SiteFooter() {
                     </Link>
                 </div>
 
-                <nav className="flex space-x-4 items-center">
+                <nav className="flex items-center space-x-4">
                     <Link
                         href={siteConfig.links.whatsapp}
                         target="_blank"
@@ -70,7 +70,7 @@ export default function SiteFooter() {
                         </div>
                     </Link>
                 </nav>
-                <p className="text-xs sm:text-sm text-[#9ca3af]">
+                <p className="text-xs text-[#9ca3af] sm:text-sm">
                     © 2023 West Side Company
                 </p>
             </div>
