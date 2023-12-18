@@ -21,7 +21,7 @@ export function ThemeToggle() {
             }}
         >
             <IconMoon className="h-5 w-5 transition-all dark:hidden" />
-            <IconSun className="h-5 w-5 transition-all hidden dark:block" />
+            <IconSun className="hidden h-5 w-5 transition-all dark:block" />
             <span className="sr-only">Toggle theme</span>
         </Button>
     )
