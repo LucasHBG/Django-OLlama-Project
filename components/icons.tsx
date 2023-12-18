@@ -15,7 +15,7 @@ function IconLogo({ className, ...props }: React.ComponentProps<"svg">) {
             height="1080"
             preserveAspectRatio="xMidYMid meet"
             version="1.0"
-            className={cn("w-6 h-6", className)}
+            className={cn("h-6 w-6", className)}
             {...props}
         >
             <defs>
@@ -46,7 +46,7 @@ function IconCheckmark({ className, ...props }: React.ComponentProps<"svg">) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={cn("w-6 h-6", className)}
+            className={cn("h-6 w-6", className)}
             {...props}
         >
             <path
@@ -66,7 +66,7 @@ function IconEmail({ className, ...props }: React.ComponentProps<"svg">) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={cn("w-8 h-8", className)}
+            className={cn("h-8 w-8", className)}
             {...props}
         >
             <path
@@ -88,7 +88,7 @@ function IconFacebook({ className, ...props }: React.ComponentProps<"svg">) {
             height="166"
             viewBox="0 0 90 166"
             xmlSpace="preserve"
-            className={cn("w-8 h-8 ", className)}
+            className={cn("h-8 w-8 ", className)}
             {...props}
         >
             <title>Facebook</title>
@@ -122,7 +122,7 @@ function IconInstagram({ className, ...props }: React.ComponentProps<"svg">) {
             height="196"
             viewBox="0 0 196 196"
             xmlSpace="preserve"
-            className={cn("w-8 h-8 ", className)}
+            className={cn("h-8 w-8 ", className)}
             {...props}
         >
             <title>Instagram</title>
@@ -157,7 +157,7 @@ function IconWhatsApp({ className, ...props }: React.ComponentProps<"svg">) {
             height="90"
             viewBox="0 0 90 90"
             xmlSpace="preserve"
-            className={cn("w-8 h-8 ", className)}
+            className={cn("h-8 w-8 ", className)}
             {...props}
         >
             <title>WhatsApp</title>
@@ -189,7 +189,7 @@ function IconThumbUp({ className, ...props }: React.ComponentProps<"svg">) {
             viewBox="0 0 24 24"
             strokeWidth={1.8}
             stroke="currentColor"
-            className={cn("w-8 h-8 ", className)}
+            className={cn("h-8 w-8 ", className)}
             {...props}
         >
             <path
@@ -209,7 +209,7 @@ function IconHome({ className, ...props }: React.ComponentProps<"svg">) {
             viewBox="0 0 24 24"
             strokeWidth={1.8}
             stroke="currentColor"
-            className={cn("w-8 h-8 ", className)}
+            className={cn("h-8 w-8 ", className)}
             {...props}
         >
             <path
@@ -229,7 +229,7 @@ function IconShieldCheck({ className, ...props }: React.ComponentProps<"svg">) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={cn("w-8 h-8 ", className)}
+            className={cn("h-8 w-8 ", className)}
             {...props}
         >
             <path
@@ -252,7 +252,7 @@ function IconTruckVehicle({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={cn("w-8 h-8 ", className)}
+            className={cn("h-8 w-8 ", className)}
             {...props}
         >
             <path
@@ -275,7 +275,7 @@ function IconBeakerChemestry({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={cn("w-8 h-8 ", className)}
+            className={cn("h-8 w-8 ", className)}
             {...props}
         >
             <path
@@ -298,7 +298,7 @@ function IconCurrencyDollar({
             viewBox="0 0 24 24"
             strokeWidth={1.8}
             stroke="currentColor"
-            className={cn("w-8 h-8 ", className)}
+            className={cn("h-8 w-8 ", className)}
             {...props}
         >
             <path
