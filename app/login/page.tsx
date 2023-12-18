@@ -18,20 +18,20 @@ export default function LoginPage() {
     }
 
     return (
-        <main className="flex justify-center items-start pb-8 pt-6 md:py-10 px-4 min-h-screen bg-gradient-to-b from-white to-gray-900 dark:from-gray-900 dark:to-white">
+        <main className="flex min-h-screen items-start justify-center bg-gradient-to-b from-white to-gray-900 px-4 pb-8 pt-6 dark:from-gray-900 dark:to-white md:py-10">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm transition-colors duration-500 ease-in-out">
                 <div className="flex flex-col space-y-1.5 p-6">
-                    <h2 className="font-semibold tracking-tight text-2xl">
+                    <h2 className="text-2xl font-semibold tracking-tight">
                         Login
                     </h2>
                     <p className="text-sm text-muted-foreground">
                         Insira suas informações para ter acesso ao dashboard.
                     </p>
                 </div>
-                <div className="p-6 space-y-4">
+                <div className="space-y-4 p-6">
                     <div className="space-y-2">
                         <label
-                            className="text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sm:text-base"
                             htmlFor="email"
                         >
                             E-mail
@@ -46,7 +46,7 @@ export default function LoginPage() {
                     </div>
                     <div className="space-y-2">
                         <label
-                            className="text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sm:text-base"
                             htmlFor="password"
                         >
                             Senha
@@ -63,7 +63,7 @@ export default function LoginPage() {
                 <div className="flex items-center p-6">
                     <button
                         onClick={submitLogin}
-                        className="inline-flex items-center justify-center rounded-md text-sm sm:text-base font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+                        className="inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:text-base"
                     >
                         Entrar
                     </button>
