@@ -1,10 +1,11 @@
 "use client"
 
 import { FormEvent } from "react"
-import { useRouter } from "next/navigation"
+
+import { useAuth } from "@/lib/hooks/use-auth"
 
 export default function LoginForm() {
-    const router = useRouter()
+    const { login } = useAuth()
 
     async function submitLogin(event: FormEvent) {
         event.preventDefault()
@@ -16,7 +17,7 @@ export default function LoginForm() {
             document.getElementById("password") as HTMLInputElement
         ).value
 
-        router.push("/auth/dashboard")
+        login({ email: user_email, password: user_password })
     }
 
     return (
