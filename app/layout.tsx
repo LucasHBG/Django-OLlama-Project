@@ -2,8 +2,11 @@ import type { Metadata, Viewport } from "next"
 
 import "@/styles/globals.css"
 
+import { QueryClientProvider } from "@tanstack/react-query"
+
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
+import queryClientConfig from "@/lib/query-client-config"
 import { cn } from "@/lib/utils"
 import SiteFooter from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
@@ -46,12 +49,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     defaultTheme="system"
                     enableSystem
                 >
-                    <div className="relative flex min-h-screen flex-col">
-                        <SiteHeader />
-                        <div className="flex-1">{children}</div>
-                        <SiteFooter />
-                    </div>
-                    <TailwindIndicator />
+                    {/* React Query Provider always on top */}
+                    <QueryClientProvider client={queryClientConfig}>
+                        <div className="relative flex min-h-screen flex-col">
+                            <SiteHeader />
+                            <div className="flex-1">{children}</div>
+                            <SiteFooter />
+                        </div>
+                        <TailwindIndicator />
+                    </QueryClientProvider>
                 </ThemeProvider>
             </body>
         </html>
