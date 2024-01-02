@@ -7,7 +7,7 @@ import { useAuth } from "@/lib/hooks/use-auth"
 export default function LoginForm() {
     const { login } = useAuth()
 
-    async function submitLogin(event: FormEvent) {
+    async function submitLogin(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
 
         const user_email = (
@@ -43,6 +43,7 @@ export default function LoginForm() {
                         autoFocus
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         id="email"
+                        name="email"
                         placeholder="admin@westside.com"
                         required
                         type="email"
@@ -58,6 +59,7 @@ export default function LoginForm() {
                     <input
                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         id="password"
+                        name="password"
                         placeholder="***************"
                         minLength={6}
                         maxLength={50}
