@@ -1,5 +1,5 @@
 import { useCallback } from "react"
-import { redirect, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { routeDashboard } from "@/utils/client-routes"
 
 import axios from "../axios"
@@ -10,10 +10,13 @@ export const useAuth = () => {
     const router = useRouter()
 
     const login = useCallback(async (formData: UserLogin) => {
+        try {
+            const response = await axios.post("api/login", formData)
 
-        await axios
-            .post("api/login", formData)
-            .then((res) => console.log("Resultado req use-auth: ", res))
+            return response
+        } catch (error) {
+            console.log("Erro ao logar: ", error)
+        }
 
         // await fetch("api/login", {
         //     method: "POST",
@@ -22,8 +25,6 @@ export const useAuth = () => {
         //     },
         //     body: JSON.stringify(formData),
         // }).then((res) => console.log("Resultado req use-auth: ", res))
-
-        redirect(routeDashboard)
     }, [])
 
     return {
