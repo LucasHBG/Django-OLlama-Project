@@ -4,14 +4,20 @@ export const siteConfig = {
     name: "West Chat",
     description:
         "Fast and precise communication is key for your client. Don't lose a potential lead. West Side Company is what you're looking for.",
-    mainNav: [
+    mainNavAuthenticated: [
         {
-            title: "Home",
+            title: "Início",
+            href: "/auth/dashboard",
+        },
+    ],
+    mainNavGuest: [
+        {
+            title: "Quem somos",
             href: "/",
         },
         {
-            title: "Dashboard",
-            href: "/auth/dashboard",
+            title: "Login",
+            href: "/login",
         },
     ],
     links: {
