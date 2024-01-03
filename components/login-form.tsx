@@ -17,7 +17,12 @@ export default function LoginForm() {
             document.getElementById("password") as HTMLInputElement
         ).value
 
-        login({ email: user_email, password: user_password })
+        login({ email: user_email, password: user_password }).then(
+            (response) => {
+                if(response?.status === 200) {
+                    window.location.href = "/auth/dashboard"
+                }
+            })
     }
 
     return (
