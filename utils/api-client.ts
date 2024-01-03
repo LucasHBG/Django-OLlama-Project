@@ -1,8 +1,8 @@
-import Cookies from "js-cookie"
 
 import { wscAuthCookie } from "./cookies"
 import { apiURL } from "./server-routes"
 import { routeLogin } from "./client-routes"
+import { cookies } from "next/headers"
 
 type ClientProp = {
     body: string
@@ -22,27 +22,23 @@ type PostRequestType = {
     body: string,
 }
 
-async function client(
-    props: RequestType,
-    headers: {
-        "Content-Type": "application/json"
-    },
-    { data, headers: customHeaders, ...customConfig }: any
-) {
-    const token = Cookies.get(wscAuthCookie)
+async function client<B>(
+    endpoint: string,
+    method: "GET" | "POST" | "PUT",
+    body: B,
+    ) {
+    const token = cookies().get(wscAuthCookie)?.value
 
     const config = {
-        body: props.method !== "GET" ? JSON.stringify(data) : undefined,
+        body: method !== "GET" ? JSON.stringify(body) : undefined,
         headers: {
+            "Content-Type": "application/json",
             Authorization: token ? `Bearer ${token}` : undefined,
-            headers,
-            ...customHeaders,
-        },
-        ...customConfig,
+        }
     }
 
     return window
-        .fetch(`${apiURL}/${props.endpoint}`, config)
+        .fetch(`${apiURL}/${endpoint}`, {})
         .then(async (response) => {
             if (response.status === 401) {
                 // queryCache.clear()
