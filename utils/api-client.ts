@@ -9,25 +9,40 @@ type ClientProp = {
     customConfig: {}
 }
 
-function client(
+type RequestType = GetRequestType | PostRequestType
+
+type GetRequestType = {
     endpoint: string,
+    method: "GET",
+}
+
+type PostRequestType = {
+    endpoint: string,
+    method: "POST" | "PUT",
+    body: string,
+}
+
+async function client(
+    props: RequestType,
+    headers: {
+        "Content-Type": "application/json"
+    },
     { data, headers: customHeaders, ...customConfig }: any
 ) {
     const token = Cookies.get(wscAuthCookie)
 
     const config = {
-        method: data ? "POST" : "GET",
-        body: data ? JSON.stringify(data) : undefined,
+        body: props.method !== "GET" ? JSON.stringify(data) : undefined,
         headers: {
             Authorization: token ? `Bearer ${token}` : undefined,
-            "Content-Type": data ? "application/json" : undefined,
+            headers,
             ...customHeaders,
         },
         ...customConfig,
     }
 
     return window
-        .fetch(`${apiURL}/${endpoint}`, config)
+        .fetch(`${apiURL}/${props.endpoint}`, config)
         .then(async (response) => {
             if (response.status === 401) {
                 // queryCache.clear()
@@ -35,7 +50,7 @@ function client(
                 console.log("Logging out user");
                 
                 // refresh the page for them
-                window.location.assign(new URL(routeLogin))
+                window.location.assign(new URL("/dashboard/outside"))
                 return Promise.reject({ message: "Please re-authenticate." })
             }
             if (response.ok) {
