@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
+import { cookies } from "next/headers"
 import { NextResponse } from "next/server"
 import { wscAuthCookie } from "@/utils/cookies"
-import Cookies from "js-cookie"
 
 // Notice the funciton definiton:
 export async function GET(req: NextApiRequest) {
@@ -19,10 +19,7 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
         const email = data["email"]
         const password = data["password"]
 
-        Cookies.set(
-            wscAuthCookie,
-            `{email:${email},password:${password},token:12345}`
-        )
+        cookies().set(wscAuthCookie, `S2$212345s12`)
 
         return NextResponse.json(
             { message: "Logado com sucesso" },
