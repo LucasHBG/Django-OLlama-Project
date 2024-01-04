@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
     )
 }
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: NextRequest, res: NextResponse) {
     try {
         const data = await new Response(req.body).json()
         const email = data["email"]
