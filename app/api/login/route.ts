@@ -1,10 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { cookies } from "next/headers"
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import { wscAuthCookie } from "@/utils/cookies"
 
 // Notice the funciton definiton:
-export async function GET(req: NextApiRequest) {
+export async function GET(req: NextRequest) {
     return NextResponse.json(
         { error: "Method not allowed" },
         {
