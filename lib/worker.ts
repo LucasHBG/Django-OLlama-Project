@@ -94,6 +94,7 @@ const embedPDF = async (pdfBlob: Blob) => {
   const pdfLoader = new WebPDFLoader(pdfBlob);
   const docs = await pdfLoader.load();
 
+  // Set the parameters for split in a text
   const splitter = new RecursiveCharacterTextSplitter({
     chunkSize: 500,
     chunkOverlap: 50,
@@ -205,7 +206,7 @@ self.addEventListener("message", async (event: any) => {
     } catch (e: any) {
       self.postMessage({
         type: "error",
-        error: `${e.message}. Make sure you are running Ollama.`,
+        error: `${e.message}. Verifique se o Ollama está em execução.`,
       });
       throw e;
     }
