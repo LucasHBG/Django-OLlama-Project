@@ -6,11 +6,10 @@ import { toast } from "react-hot-toast"
 
 import { ChatWindowMessage } from "@/types/chat-window-message"
 
-import { IconLogo } from "../icons"
+import { IconLogo, IconUser } from "../icons"
 
 type Props = {
     message: ChatWindowMessage
-    aiEmoji: string | undefined
 }
 
 export function ChatMessageBubble(props: Props) {
@@ -25,7 +24,7 @@ export function ChatMessageBubble(props: Props) {
      * If its human, then we want to align it to the right, otherwise align it to the left.
      */
     const alignmentClassName = role === "human" ? "ml-auto" : "mr-auto"
-    const prefix = role === "human" ? <IconLogo /> : props.aiEmoji
+    const prefix = role === "human" ? <IconUser /> : <IconLogo />
 
     const [isLoading, setIsLoading] = useState(false)
     const [feedback, setFeedback] = useState<Feedback | null>(null)
