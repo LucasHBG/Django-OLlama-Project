@@ -1,6 +1,6 @@
 export default function DashboardPage() {
     return (
-        <main className="p-10 space-y-4">
+        <main className="container p-10 space-y-4">
             <h2 className="text-lg font-medium">
                 Aqui você visualiza as conversas do seu WhatsApp
             </h2>
