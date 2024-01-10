@@ -18,6 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Ollama setup
 
+Go to [Ollama.ai](https://www.ollama.ai/download) and install the program.
 If it's the first time running ollama then you should pull your desired model:
 
 ```bash
