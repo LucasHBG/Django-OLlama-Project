@@ -1,6 +1,6 @@
 import { wscAuthCookie } from "@/utils/cookies"
 import { apiURL } from "@/utils/server-routes"
-import Axios, { AxiosError, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios"
+import Axios, { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from "axios"
 import Cookies from "js-cookie"
 
 const axios = Axios.create({
