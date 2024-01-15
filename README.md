@@ -16,6 +16,10 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### Ngrok setup
+
+In order to test whatsapp webhook you can use [Ngrok](https://ngrok.com/download) to test locally
+
 ### Ollama setup
 
 Go to [Ollama.ai](https://www.ollama.ai/download) and install the program.
@@ -32,3 +36,7 @@ OLLAMA_ORIGINS=http://localhost:3000 OLLAMA_HOST=127.0.0.1:11435 ollama serve
 ```
 
 The origin and host parameters can change based on your setup.
+
+### Whatsapp
+
+To send a message of type text to an individual, it's necessary that the user has initiated the conversation first in order for you get no charges from the 1k free user initiated messages.
