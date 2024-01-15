@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from "next"
 import { cookies } from "next/headers"
 import { NextRequest, NextResponse } from "next/server"
 import { wscAuthCookie } from "@/utils/cookies"
@@ -22,7 +21,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         cookies().set(wscAuthCookie, `S2$212345s12`)
 
         return NextResponse.json(
-            { message: "Logado com sucesso" },
+            { message: "Logado com sucesso", authKey: "S2$212345s12" },
             { status: 200 }
         )
     } catch (error) {
