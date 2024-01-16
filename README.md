@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Ngrok setup
 
-In order to test whatsapp webhook you can use [Ngrok](https://ngrok.com/download) to test locally
+In order to test whatsapp webhook you can use [Ngrok](https://ngrok.com/download) to test locally. You *SHOULD* change the port if you're not using 3000.
 
 ### Ollama setup
 
