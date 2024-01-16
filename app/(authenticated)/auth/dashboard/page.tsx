@@ -21,13 +21,12 @@ export default function DashboardPage() {
             <Button
                 onClick={() => {
                     fetch(
-                        "https://graph.facebook.com/v18.0/108612608761986/messages",
+                        `https://graph.facebook.com/${process.env.WHATSAPP_API_VERSION}/108612608761986/messages`,
                         {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
-                                Authorization:
-                                    "Bearer EABrPDcsE8h8BO2QvL71znjuhTM0X3HvyV7JEctBnyIS7QkVMqm9WmY0VTIIZBNybWvSovm1MvxZB0N8v5cwiiLo1IkMb5cfGbwyQvKyZBvWNbYfRefy69xZBLVHLHqR1zWihqfzkJBOnCCwwDQ5MORrVopUF3Umsj1MUZBBjGcNJOyvXCyWIbrZArXZBi0iCCumHwkB8G4OsxxZBpgxNXcwZD",
+                                Authorization: `Bearer ${process.env.WHATSAPP_ACCESS_TOKEN}`,
                             },
                             body: JSON.stringify({
                                 messaging_product: "whatsapp",
