@@ -17,15 +17,16 @@ export async function GET(req: NextRequest) {
             // Check if the mode and token sent are correct
             if (mode === "subscribe" && token === verify_token) {
                 console.log("Whats the token? IF", token)
-                console.log(
-                    "Whats the verify_token? IF",
-                    process.env.WHATSAPP_VERIFY_TOKEN
-                )
+                console.log("Whats the verify_token? IF", verify_token)
 
                 // Respond with 200 OK and send challenge token from the request
-                return NextResponse.json(challenge, { status: 200, statusText: "OK" })
+                return NextResponse.json(challenge, {
+                    status: 200,
+                    statusText: "OK",
+                })
             } else {
                 console.log("Whats the token? ELSE", token)
+                console.log("Whats the verify_token? ELSE", verify_token)
                 // Responds with '403 Forbidden' if verify tokens do not match
                 return NextResponse.json({
                     error: "Forbidden - Token or Mode did not match",
