@@ -16,9 +16,9 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Ngrok setup
+### Ngrok or Zrok setup
 
-In order to test whatsapp webhook you can use [Ngrok](https://ngrok.com/download) to test locally. You *SHOULD* change the port if you're not using 3000.
+In order to test whatsapp webhook you can use [Ngrok](https://ngrok.com/download) or [Zrok](https://zrok.io/) to test locally using proxy. You *SHOULD* change the port if you're not using 3000.
 
 ### Ollama setup
 
