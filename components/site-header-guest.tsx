@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { IconWhatsApp } from "@/components/icons"
 import { MainNavGuest } from "@/components/main-nav-guest"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -13,6 +13,11 @@ export function SiteHeaderGuest() {
                 <MainNavGuest items={siteConfig.mainNavGuest} />
                 <div className="flex flex-1 items-center justify-end space-x-4">
                     <nav className="flex items-center space-x-1">
+                        <Link href="/login">
+                            <Button>
+                                Login
+                            </Button>
+                        </Link>
                         <Link
                             href={siteConfig.links.whatsapp}
                             target="_blank"
