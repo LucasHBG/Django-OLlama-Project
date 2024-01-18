@@ -1,6 +1,9 @@
+import axios from "axios"
+import { unstable_noStore } from "next/cache"
 import { NextRequest, NextResponse } from "next/server"
 
 // Access token for your WhatsApp business account app
+unstable_noStore()
 const whatsapp_access_token = process.env.WHATSAPP_ACCESS_TOKEN
 
 // Verify Token defined when configuring the webhook
@@ -16,17 +19,15 @@ export async function GET(req: NextRequest) {
         if (mode && token) {
             // Check if the mode and token sent are correct
             if (mode === "subscribe" && token === verify_token) {
-                console.log("Whats the token? IF", token)
-                console.log("Whats the verify_token? IF", verify_token)
 
-                // Respond with 200 OK and send challenge token from the request
-                return NextResponse.json(challenge, {
+                // Respond with 200 OK and send challenge token from the request as plain text
+                return new NextResponse(challenge, {
                     status: 200,
-                    statusText: "OK",
+                    headers: {
+                        "Content-Type": "text/plain"
+                    }
                 })
             } else {
-                console.log("Whats the token? ELSE", token)
-                console.log("Whats the verify_token? ELSE", verify_token)
                 // Responds with '403 Forbidden' if verify tokens do not match
                 return NextResponse.json({
                     error: "Forbidden - Token or Mode did not match",
@@ -41,6 +42,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest, res: NextResponse) {
+    unstable_noStore()
     //? send the response as a WhatsApp message back to the user
     function sendWhatsappMessage(body: any) {
         const value = body.entry[0].changes[0].value
@@ -49,26 +51,32 @@ export async function POST(req: NextRequest, res: NextResponse) {
         const user_text = value.messages[0].text.body
         console.log(from_number, user_text)
 
-        fetch(
+        axios(
             `https://graph.facebook.com/${process.env.WHATSAPP_API_VERSION}/${phone_number_id}/messages`,
             {
                 method: "POST",
-                body: JSON.stringify({
+                data: {
                     messaging_product: "whatsapp",
                     to: from_number,
                     text: { body: `Mensagem recebida: ${user_text}` },
-                }),
+                },
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${whatsapp_access_token}`,
                 },
             }
-        )
+        ).catch(error => {
+            console.log("Whats the problem? ", error);
+            
+        })
     }
 
     //? handle WhatsApp messages of different type
     function handleWhatsappMessage(body: any) {
         const message = body.entry[0].changes[0].value.messages[0]
+        console.log("Message value: ", message);
+        console.log("Message type: ",message.type);
+        
         // let message_body;
         if (message.type === "text") {
             // message_body = message.text.body
@@ -96,6 +104,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
                 body.entry[0].changes[0].value.messages &&
                 body.entry[0].changes[0].value.messages[0]
             ) {
+                console.log("Entered HandleWhatsappMessage");
                 handleWhatsappMessage(body)
             }
 
