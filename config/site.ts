@@ -20,8 +20,12 @@ export const siteConfig = {
             href: "/",
         },
         {
-            title: "Login",
-            href: "/login",
+            title: "Política de Privacidade",
+            href: "/privacy-policy",
+        },
+        {
+            title: "Termos e Condições",
+            href: "/terms-and-conditions",
         },
     ],
     links: {
