@@ -8,11 +8,7 @@ export const siteConfig = {
         {
             title: "Início",
             href: "/auth/dashboard",
-        },
-        {
-            title: "Carregar PDF",
-            href: "/auth/pdf-upload",
-        },
+        }
     ],
     mainNavGuest: [
         {
