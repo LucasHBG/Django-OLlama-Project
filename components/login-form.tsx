@@ -4,6 +4,19 @@ import { FormEvent } from "react"
 
 import { useAuth } from "@/lib/hooks/use-auth"
 
+import { IconGithub, IconGoogle } from "./icons"
+import { Button } from "./ui/button"
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "./ui/card"
+import { Input } from "./ui/input"
+import { Label } from "./ui/label"
+
 export default function LoginForm() {
     const { login } = useAuth()
 
@@ -19,65 +32,71 @@ export default function LoginForm() {
 
         login({ email: user_email, password: user_password }).then(
             (response) => {
-                if(response?.status === 200) {
+                if (response?.status === 200) {
                     window.location.href = "/auth/dashboard"
                 }
-            })
+            }
+        )
     }
 
     return (
-        <form
-            onSubmit={submitLogin}
-            className="rounded-lg border bg-card text-card-foreground shadow-sm transition-colors duration-500 ease-in-out"
-        >
-            <div className="flex flex-col space-y-1.5 p-6">
-                <h2 className="text-2xl font-semibold tracking-tight">Login</h2>
-                <p className="text-sm text-muted-foreground">
-                    Insira suas informações para ter acesso ao dashboard.
-                </p>
-            </div>
-            <div className="space-y-4 p-6">
-                <div className="space-y-2">
-                    <label
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sm:text-base"
-                        htmlFor="email"
-                    >
-                        E-mail
-                    </label>
-                    <input
-                        autoFocus
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        id="email"
-                        name="email"
-                        placeholder="admin@westside.com"
-                        required
-                        type="email"
-                    />
-                </div>
-                <div className="space-y-2">
-                    <label
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sm:text-base"
-                        htmlFor="password"
-                    >
-                        Senha
-                    </label>
-                    <input
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        id="password"
-                        name="password"
-                        placeholder="***************"
-                        minLength={6}
-                        maxLength={50}
-                        required
-                        type="password"
-                    />
-                </div>
-            </div>
-            <div className="flex items-center p-6">
-                <button className="inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 sm:text-base">
-                    Entrar
-                </button>
-            </div>
+        <form onSubmit={submitLogin}  className="block lg:w-1/3">
+            <Card>
+                <CardHeader className="space-y-1">
+                    <CardTitle className="text-2xl">Login</CardTitle>
+                    <CardDescription>
+                        Enter your account information below
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="grid gap-4">
+                    <div className="grid grid-cols-2 gap-6">
+                        <Button variant="outline">
+                            <IconGithub className="mr-2 h-4 w-4" />
+                            Github
+                        </Button>
+                        <Button variant="outline">
+                            <IconGoogle className="mr-2 h-4 w-4" />
+                            Google
+                        </Button>
+                    </div>
+                    <div className="relative">
+                        <div className="absolute inset-0 flex items-center">
+                            <span className="w-full border-t" />
+                        </div>
+                        <div className="relative flex justify-center text-xs uppercase">
+                            <span className="bg-background px-2 text-muted-foreground">
+                                Or continue with
+                            </span>
+                        </div>
+                    </div>
+                    <div className="grid gap-2">
+                        <Label htmlFor="email">E-mail</Label>
+                        <Input
+                            autoFocus
+                            id="email"
+                            name="email"
+                            placeholder="admin@westside.com"
+                            required
+                            type="email"
+                        />
+                    </div>
+                    <div className="grid gap-2">
+                        <Label htmlFor="password">Password</Label>
+                        <Input
+                            id="password"
+                            name="password"
+                            placeholder="***************"
+                            minLength={6}
+                            maxLength={50}
+                            required
+                            type="password"
+                        />
+                    </div>
+                </CardContent>
+                <CardFooter>
+                    <Button className="w-full">Continue</Button>
+                </CardFooter>
+            </Card>
         </form>
     )
 }
