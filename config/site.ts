@@ -16,7 +16,7 @@ export const siteConfig = {
     ],
     mainNavGuest: [
         {
-            title: "Who we are",
+            title: "About Us",
             href: "/",
         },
         {
