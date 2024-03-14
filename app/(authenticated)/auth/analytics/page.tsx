@@ -8,6 +8,7 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Overview } from "@/components/overview"
 
 export const metadata: Metadata = {
     title: "Gráficos",
@@ -158,8 +159,7 @@ export default function AnalyticsPage() {
                                     <CardTitle>Overview</CardTitle>
                                 </CardHeader>
                                 <CardContent className="pl-2">
-                                    {/* <Overview /> */}
-                                    Overview
+                                    <Overview />
                                 </CardContent>
                             </Card>
                             <Card className="col-span-3">
