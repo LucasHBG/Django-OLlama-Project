@@ -6,21 +6,25 @@ export const siteConfig = {
         "Fast and precise communication is key for your client. Don't lose a potential lead. West Side Company is what you're looking for.",
     mainNavAuthenticated: [
         {
-            title: "Início",
+            title: "Home",
             href: "/auth/dashboard",
+        },
+        {
+            title: "Analytics",
+            href: "/auth/analytics",
         }
     ],
     mainNavGuest: [
         {
-            title: "Quem somos",
+            title: "Who we are",
             href: "/",
         },
         {
-            title: "Política de Privacidade",
+            title: "Privacy Policy",
             href: "/privacy-policy",
         },
         {
-            title: "Termos e Condições",
+            title: "Terms and Conditions",
             href: "/terms-and-conditions",
         },
     ],
