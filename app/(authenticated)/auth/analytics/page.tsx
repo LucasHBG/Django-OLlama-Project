@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Overview } from "@/components/overview"
+import { RecentSales } from "@/components/recent-sales"
 
 export const metadata: Metadata = {
     title: "Gráficos",
@@ -170,8 +171,7 @@ export default function AnalyticsPage() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
-                                    {/* <RecentSales /> */}
-                                    Recent Sales
+                                    <RecentSales />
                                 </CardContent>
                             </Card>
                         </div>
