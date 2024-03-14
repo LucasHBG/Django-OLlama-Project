@@ -39,7 +39,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <head />
             <body
                 className={cn(
-                    "min-h-screen bg-background font-sans antialiased",
+                    "h-dvh bg-background font-sans antialiased",
                     fontSans.variable
                 )}
             >
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     defaultTheme="system"
                     enableSystem
                 >
-                    <div className="relative flex min-h-screen flex-col">
+                    <div className="relative flex h-dvh flex-col">
                         <SiteHeaderGuest />
                         <div className="flex-1">{children}</div>
                         <SiteFooter />
