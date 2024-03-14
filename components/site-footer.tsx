@@ -8,7 +8,7 @@ import { buttonVariants } from "./ui/button"
 
 export default function SiteFooter() {
     return (
-        <footer className=" z-40 w-full border-t bg-background">
+        <footer className="z-40 w-full border-t bg-background">
             <div className="container flex h-auto flex-col items-center justify-between space-y-4 px-4 py-4 sm:h-16 sm:flex-row sm:space-y-0 sm:py-0 md:px-6">
                 <div className="flex items-center space-x-4">
                     <Link href="/" className="flex items-center space-x-2">
@@ -96,7 +96,7 @@ export default function SiteFooter() {
                 </nav>
 
                 {/* Footer layout for small devices*/}
-                <nav className="flex flex-col items-center md:hidden space-y-4 py-2">
+                <nav className="flex flex-col items-center md:hidden space-y-4 my-2">
                     <div className="flex items-center">
                         <Link
                             href={siteConfig.links.whatsapp}
