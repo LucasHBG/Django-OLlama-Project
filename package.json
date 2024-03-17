@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev ",
+    "dev": "next dev",
     "zrok": "zrok share public http://localhost:3000 --backend-mode proxy",
     "ngrok": "ngrok http --domain=lionfish-sensible-randomly.ngrok-free.app 3000",
     "build": "next build",
