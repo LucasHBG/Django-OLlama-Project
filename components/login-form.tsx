@@ -40,7 +40,7 @@ export default function LoginForm() {
     }
 
     return (
-        <form onSubmit={submitLogin}  className="block lg:w-1/3">
+        <form onSubmit={submitLogin} className="block lg:w-1/3">
             <Card>
                 <CardHeader className="space-y-1">
                     <CardTitle className="text-2xl">Login</CardTitle>
@@ -75,10 +75,14 @@ export default function LoginForm() {
                             autoFocus
                             id="email"
                             name="email"
+                            className="peer/email"
                             placeholder="admin@westside.com"
                             required
                             type="email"
                         />
+                        <p className="invisible text-sm text-red-600 dark:text-red-400 peer-invalid/email:visible">
+                            Please provide a valid email address.
+                        </p>
                     </div>
                     <div className="grid gap-2">
                         <Label htmlFor="password">Password</Label>
@@ -86,11 +90,15 @@ export default function LoginForm() {
                             id="password"
                             name="password"
                             placeholder="***************"
+                            className="peer/password"
                             minLength={6}
                             maxLength={50}
                             required
                             type="password"
                         />
+                        <p className="invisible text-sm text-red-600 dark:text-red-400 peer-invalid/password:visible">
+                            Please provide a valid password.
+                        </p>
                     </div>
                 </CardContent>
                 <CardFooter>
