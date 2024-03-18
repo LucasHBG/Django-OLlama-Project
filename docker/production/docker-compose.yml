@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  wsc-env-production:
+    build:
+      context: ../../
+      dockerfile: docker/production/Dockerfile
+    image: wsc-env-production
+    ports:
+      - "3003:3000"
