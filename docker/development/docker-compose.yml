@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  wsc-env-development:
+    build:
+      context: ../../
+      dockerfile: docker/development/Dockerfile
+    image: wsc-env-development
+    ports:
+      - "3001:3000"
