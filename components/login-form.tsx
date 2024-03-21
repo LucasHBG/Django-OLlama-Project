@@ -80,9 +80,6 @@ export default function LoginForm() {
                             required
                             type="email"
                         />
-                        <p className="invisible text-sm text-red-600 dark:text-red-400 peer-invalid/email:visible">
-                            Please provide a valid email address.
-                        </p>
                     </div>
                     <div className="grid gap-2">
                         <Label htmlFor="password">Password</Label>
@@ -92,13 +89,11 @@ export default function LoginForm() {
                             placeholder="***************"
                             className="peer/password"
                             minLength={6}
-                            maxLength={50}
+                            maxLength={512}
                             required
                             type="password"
                         />
-                        <p className="invisible text-sm text-red-600 dark:text-red-400 peer-invalid/password:visible">
-                            Please provide a valid password.
-                        </p>
+
                     </div>
                 </CardContent>
                 <CardFooter>
