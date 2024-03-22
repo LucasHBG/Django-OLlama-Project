@@ -1,7 +1,7 @@
 import { cookies } from "next/headers"
 import { NextResponse, type NextRequest } from "next/server"
 
-import { wscAuthCookie } from "./utils/cookies"
+import { wscAuthCookie } from "./lib/cookies"
 
 export const middleware = (req: NextRequest) => {
     const token = cookies().get(wscAuthCookie)?.value
