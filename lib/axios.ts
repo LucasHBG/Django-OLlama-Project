@@ -1,7 +1,12 @@
-import { wscAuthCookie } from "@/utils/cookies"
-import { apiURL } from "@/utils/server-routes"
-import Axios, { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from "axios"
+import Axios, {
+    AxiosError,
+    AxiosResponse,
+    InternalAxiosRequestConfig,
+} from "axios"
 import Cookies from "js-cookie"
+
+import { wscAuthCookie } from "@/lib/cookies"
+import { apiURL } from "@/lib/server-routes"
 
 const axios = Axios.create({
     baseURL: apiURL,
@@ -12,7 +17,9 @@ const axios = Axios.create({
 })
 
 // O interceptador de chamadas http chama essa função em todas as requisições.
-const setAuthorizationHeader = (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
+const setAuthorizationHeader = (
+    config: InternalAxiosRequestConfig
+): InternalAxiosRequestConfig => {
     const token = Cookies.get(wscAuthCookie)
 
     config.headers = config.headers ?? {}
