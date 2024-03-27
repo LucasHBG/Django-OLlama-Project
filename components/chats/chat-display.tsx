@@ -13,7 +13,7 @@ import {
     Trash2,
 } from "lucide-react"
 
-import { Chat } from "@/lib/mocks/chats-data"
+import { ChatModel } from "@/lib/mocks/chats-data"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
@@ -39,7 +39,7 @@ import {
 } from "@/components/ui/tooltip"
 
 interface MailDisplayProps {
-    chat: Chat | null
+    chat: ChatModel | null
 }
 
 export function ChatDisplay({ chat }: MailDisplayProps) {

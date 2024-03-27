@@ -13,7 +13,7 @@ import {
 import { TooltipProvider } from "../ui/tooltip"
 import { Nav } from "./chat-nav"
 import { Separator } from "../ui/separator"
-import { Chat } from "@/lib/mocks/chats-data"
+import { ChatModel } from "@/lib/mocks/chats-data"
 import { Input } from "../ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
 import { ChatList } from "./chat-list"
@@ -21,7 +21,7 @@ import { useChat } from "@/lib/hooks/use-chat"
 import { ChatDisplay } from "./chat-display"
 
 interface MailProps {
-    chats: Chat[]
+    chats: ChatModel[]
     defaultLayout: number[] | undefined
     defaultCollapsed?: boolean
     navCollapsedSize: number

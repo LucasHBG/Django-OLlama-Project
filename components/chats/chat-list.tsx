@@ -1,7 +1,7 @@
 import { ComponentProps } from "react"
 import { formatDistanceToNow } from "date-fns/formatDistanceToNow"
 
-import { Chat } from "@/lib/mocks/chats-data"
+import { ChatModel } from "@/lib/mocks/chats-data"
 import { cn } from "@/lib/utils"
 
 import { Badge } from "../ui/badge"
@@ -9,7 +9,7 @@ import { ScrollArea } from "../ui/scroll-area"
 import { useChat } from "@/lib/hooks/use-chat"
 
 interface ChatListProps {
-    items: Chat[]
+    items: ChatModel[]
 }
 
 export function ChatList({ items }: ChatListProps) {

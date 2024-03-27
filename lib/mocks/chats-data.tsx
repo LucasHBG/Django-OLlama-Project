@@ -171,7 +171,7 @@ export const chats = [
     },
 ]
 
-export type Chat = (typeof chats)[number]
+export type ChatModel = (typeof chats)[number]
 
 export const contacts = [
     {

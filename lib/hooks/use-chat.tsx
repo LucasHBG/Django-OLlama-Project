@@ -1,8 +1,8 @@
 import { atom, useAtom } from "jotai"
-import { Chat, chats } from "../mocks/chats-data"
+import { ChatModel, chats } from "../mocks/chats-data"
 
 type Config = {
-  selected: Chat["id"] | null
+  selected: ChatModel["id"] | null
 }
 
 const configAtom = atom<Config>({
